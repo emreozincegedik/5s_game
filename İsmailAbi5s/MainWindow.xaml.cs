@@ -21,8 +21,10 @@ namespace İsmailAbi5s
     public partial class MainWindow : Window
     {
         List<Border> borders;
-        int score1 = 1;
         DateTime start;
+        bool canPick = true;
+        List<Label> scores;
+        int level = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -37,13 +39,27 @@ namespace İsmailAbi5s
             dispatcherTimer.Tick += dispatcherTimer_Tick;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 0,0,100);
 
-            
 
+            scores = new List<Label>
+            {
+                score1,
+                score2,
+                score3
+            };
+
+            score_label.Visibility = Visibility.Hidden;
+            score1.Visibility = Visibility.Hidden;
+            score2.Visibility = Visibility.Hidden;
+            score3.Visibility = Visibility.Hidden;
         }
 
 
         private void Button_Click(object sender, MouseButtonEventArgs e)
         {
+            if (!canPick)
+            {
+                return;
+            }
             Label a = (Label)sender;
             if ((int.Parse(a.Content.ToString()))==(int.Parse(number_next.Content.ToString())))
             {
@@ -57,6 +73,23 @@ namespace İsmailAbi5s
             if (timeleft<=0)
             {
                 dispatcherTimer.Stop();
+                canPick = false;
+                score_label.Visibility = Visibility.Visible;
+                scores[level].Visibility = Visibility.Visible;
+                scores[level].Content = (int.Parse(number_next.Content.ToString())) - 1;
+                if (level==0)
+                {
+                    // işlemler
+                }
+                else if (level == 1)
+                {
+                    // işlemler
+                }
+                else if(level == 2)
+                {
+                    // işlemler
+                }
+                level++;
                 //sayfa değiştir
             }
             timer.Content = timeleft;
