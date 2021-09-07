@@ -10,18 +10,19 @@
         >
 
     <Grid>
-
+        
         <TabControl HorizontalAlignment="Left" Height="737" VerticalAlignment="Top" Width="1160">
+            
             <TabItem x:Name="tab1" Header="TabItem">
                 <Grid>
                     <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="55"  Margin="0,-100,0,0">
                         <Label Content="5S Oyununa Hoş Geldiniz"/>
                     </Label>
-                    <Button x:Name="btn_start"  Content="Başla" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,0,0" Width="302" FontSize="55"/>
+                    <Button x:Name="btn_start"  Content="Başla" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,100,0,0" Width="302" FontSize="55" Click="btn_start_Click"/>
 
                 </Grid>
             </TabItem>
-            <TabItem Header="TabItem">
+            <TabItem Header="TabItem" x:Name="tab2">
                 <Grid Margin="0,0,57,35">
                     <Grid.Resources>
                         <Brush x:Key="MyColor">#FFF5B8B8</Brush>
@@ -93,9 +94,7 @@
                     <Border x:Name="number_4s" HorizontalAlignment="center" Height="38" Margin="620,552,445,84" VerticalAlignment="center" Width="32" Background="Transparent" BorderThickness="0" >
                         <Label Content="4" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
                     </Border>
-                    <Border x:Name="number_5s" HorizontalAlignment="center" Height="31" Margin="571,298,498,345" VerticalAlignment="center" Width="28" Background="Transparent" BorderThickness="0" >
-                        <Label Content="5" MouseLeftButtonDown="Button_Click" Margin="-4,-5,-7,-6"  Foreground="Transparent"/>
-                    </Border>
+
                     <Border x:Name="number_6s" HorizontalAlignment="center" Height="28" Margin="406,159,663,487" VerticalAlignment="center" Width="28" Background="Transparent" BorderThickness="0" >
                         <Label Content="6" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
                     </Border>
@@ -120,9 +119,7 @@
                     <Border x:Name="number_13s" HorizontalAlignment="center" Height="30" Margin="527,558,539,86" VerticalAlignment="center" Width="31" Background="Transparent" BorderThickness="0" >
                         <Label Content="13" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
                     </Border>
-                    <Border x:Name="number_14s" HorizontalAlignment="center" Height="32" Margin="417,406,645,236" VerticalAlignment="center" Width="35" Background="Transparent" BorderThickness="0" >
-                        <Label Content="14" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
-                    </Border>
+
                     <Border x:Name="number_15s" HorizontalAlignment="center" Height="64" Margin="602,184,432,426" VerticalAlignment="center" Width="63" Background="Transparent" BorderThickness="0" >
                         <Label Content="15" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
                     </Border>
@@ -177,6 +174,9 @@
                     <Border x:Name="number_32s" HorizontalAlignment="center" Height="122" Margin="406,328,569,224" VerticalAlignment="center" Width="122" Background="Transparent" BorderThickness="0" >
                         <Label Content="32" MouseLeftButtonDown="Button_Click" Foreground="Transparent" Margin="10,0,0,10"/>
                     </Border>
+                    <Border x:Name="number_14s" HorizontalAlignment="center" Height="32" Margin="417,406,645,236" VerticalAlignment="center" Width="35" Background="Transparent" BorderThickness="0" >
+                        <Label Content="14" MouseLeftButtonDown="Button_Click" Foreground="Transparent" Margin="-3,-3,-4,-3"/>
+                    </Border>
                     <Border x:Name="number_33s" HorizontalAlignment="center" Height="66" Margin="604,82,433,526" VerticalAlignment="center" Width="60" Background="Transparent" BorderThickness="0" >
                         <Label Content="33" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
                     </Border>
@@ -204,6 +204,9 @@
                     <Border x:Name="number_41s" HorizontalAlignment="center" Height="92" Margin="516,313,493,269" VerticalAlignment="center" Width="88" Background="Transparent" BorderThickness="0" >
                         <Label Content="41" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
                     </Border>
+                    <Border x:Name="number_5s" HorizontalAlignment="center" Height="31" Margin="571,298,498,345" VerticalAlignment="center" Width="28" Background="Transparent" BorderThickness="0" >
+                        <Label Content="5" MouseLeftButtonDown="Button_Click"  Foreground="Transparent"/>
+                    </Border>
                     <Border x:Name="number_42s" HorizontalAlignment="center" Height="51" Margin="417,207,631,416" VerticalAlignment="center" Width="49" Background="Transparent" BorderThickness="0" >
                         <Label Content="42" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
                     </Border>
@@ -230,10 +233,12 @@
                     </Border>
                     <Label Content="Sıradaki sayı" HorizontalAlignment="Center" Margin="932,186,0,436" VerticalAlignment="Center" FontSize="25" Height="52" Width="165"/>
                     <Label x:Name="number_next" Content="1" HorizontalAlignment="Center" Margin="954,237,10,386" VerticalAlignment="Center" FontSize="25" Height="51" Width="133"/>
+                    <Label Content="Kalan süre" HorizontalAlignment="Center" Margin="932,296,0,326" VerticalAlignment="Center" FontSize="25" Height="52" Width="165"/>
+                    <Label x:Name="timer" Content="30" HorizontalAlignment="Center" Margin="954,347,10,276" VerticalAlignment="Center" FontSize="25" Height="51" Width="133"/>
                 </Grid>
             </TabItem>
 
         </TabControl>
-
+        <Label Content="Created by: Emre Özincegedik" Margin="0,691,0,0" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Window>
