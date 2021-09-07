@@ -95,19 +95,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\5S resim.png" />
+    <Resource Include="images\transparent 1-99.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\5s resim nontransparent.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\imageonline-co-transparentimage %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\5s transparent full.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\imageonline-co-transparentimage %282%29.png" />
+    <Resource Include="images\transparent 1-49.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
