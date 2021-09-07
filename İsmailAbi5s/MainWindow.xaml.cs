@@ -20,9 +20,41 @@ namespace İsmailAbi5s
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Border> borders;
+        int number = 1;
         public MainWindow()
         {
             InitializeComponent();
+            borders = new List<Border>() {
+            number_1,number_2,number_3,number_4,number_5,number_6,number_7,number_8,number_9,number_10,
+            number_11,number_12,number_13,number_14,number_15,number_16,number_17,number_18,number_19,number_20,
+            number_21,number_22,number_23,number_24,number_25,number_26,number_27,number_28,number_29,number_20,
+            number_31,number_32,number_33,number_34,number_35,number_36,number_37,number_38,number_39,number_30,
+            number_41,number_42,number_43,number_44,number_45,number_46,number_47,number_48,number_49
+            };
+            
+        }
+
+        private void number_47_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            number_next.Content = 5;
+        }
+
+        private void number_1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            number_next.Content = 5;
+        }
+
+
+        private void Button_Click(object sender, MouseButtonEventArgs e)
+        {
+            Label a = (Label)sender;
+            if ((int.Parse(a.Content.ToString()))==(int.Parse(number_next.Content.ToString())))
+            {
+             borders[int.Parse(a.Content.ToString())-1].Visibility = Visibility.Visible;
+            number_next.Content = (int.Parse(a.Content.ToString())+1).ToString();
+
+            }
         }
     }
 }
