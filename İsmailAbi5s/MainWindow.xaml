@@ -10,7 +10,9 @@
         >
 
     <Grid>
-
+        <Grid.Resources>
+            <Brush x:Key="MyColor">#FFF5B8B8</Brush>
+        </Grid.Resources>
         <TabControl HorizontalAlignment="Left" Height="737" VerticalAlignment="Top" Width="1160">
 
             <TabItem x:Name="tab1" Header="TabItem">
@@ -24,9 +26,7 @@
             </TabItem>
             <TabItem Header="TabItem" x:Name="tab2">
                 <Grid Margin="0,0,57,35">
-                    <Grid.Resources>
-                        <Brush x:Key="MyColor">#FFF5B8B8</Brush>
-                    </Grid.Resources>
+
 
                     <Border x:Name="number_1" HorizontalAlignment="center" Height="25" Margin="267,536,808,113" VerticalAlignment="center" Width="22" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
                     <Border x:Name="number_2" HorizontalAlignment="center" Height="52" Margin="361,254,695,368" VerticalAlignment="center" Width="41" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
@@ -77,9 +77,9 @@
                     <Border x:Name="number_47" HorizontalAlignment="center" Height="68" Margin="226,387,803,219" VerticalAlignment="center" Width="68" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
                     <Border x:Name="number_48" HorizontalAlignment="center" Height="53" Margin="272,82,772,539" VerticalAlignment="center" Width="53" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
                     <Border x:Name="number_49" HorizontalAlignment="center" Height="57" Margin="422,450,608,167" VerticalAlignment="center" Width="67" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
-                    <Image Margin="168,0,194,10"  HorizontalAlignment="center" VerticalAlignment="center">
+                    <Image  x:Name="image" Margin="168,0,194,10"  HorizontalAlignment="center" VerticalAlignment="center">
                         <Image.Source>
-                            <BitmapImage x:Name="image"  UriSource="./images/transparent 1-99.png" />
+                            <BitmapImage UriSource="./images/transparent 1-99.png" />
                         </Image.Source>
                     </Image>
                     <Border x:Name="number_1s" HorizontalAlignment="center" Height="25" Margin="267,536,808,113" VerticalAlignment="center" Width="22" Background="Transparent" BorderThickness="0">
@@ -231,17 +231,264 @@
                     <Border x:Name="number_49s" HorizontalAlignment="center" Height="57" Margin="422,450,608,167" VerticalAlignment="center" Width="67" Background="Transparent" BorderThickness="0" >
                         <Label Content="49" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
                     </Border>
-                    <Label Content="Sıradaki sayı" HorizontalAlignment="Center" Margin="932,186,0,436" VerticalAlignment="Center" FontSize="25" Height="52" Width="165"/>
-                    <Label x:Name="number_next" Content="1" HorizontalAlignment="Center" Margin="954,237,10,386" VerticalAlignment="Center" FontSize="25" Height="51" Width="133"/>
-                    <Label Content="Kalan süre" HorizontalAlignment="Center" Margin="932,296,0,326" VerticalAlignment="Center" FontSize="25" Height="52" Width="165"/>
-                    <Label x:Name="timer" Content="30" HorizontalAlignment="Center" Margin="954,347,10,276" VerticalAlignment="Center" FontSize="25" Height="51" Width="133"/>
-                    <Label x:Name="score_label" Content="Skor" HorizontalAlignment="Center" Margin="910,33,22,589" VerticalAlignment="Center" FontSize="25" Height="52" Width="165"/>
-                    <Label x:Name="score1" Content="0" HorizontalAlignment="Center" Margin="932,84,115,539" VerticalAlignment="Center" FontSize="25" Height="51" Width="50"/>
-                    <Label x:Name="score2" Content="0" HorizontalAlignment="Center" Margin="987,85,60,538" VerticalAlignment="Center" FontSize="25" Height="51" Width="50"/>
-                    <Label x:Name="score3" Content="0" HorizontalAlignment="Center" Margin="1047,85,0,538" VerticalAlignment="Center" FontSize="25" Height="51" Width="50"/>
+                    
+
+                    <Border x:Name="line1" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="574" Margin="405,46,691,54" Width="1"/>
+                    <Border x:Name="line2" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="574" Margin="665,46,431,54" Width="1"/>
+                    <Border x:Name="line3" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="1" Margin="137,258,194,415" Width="766"/>
+                    <Border x:Name="line4" BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="1" Margin="139,449,192,224" Width="766"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tab3" Header="TabItem">
+                <Grid>
+                    <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="55"  Margin="374,33,354,587" Content="1. tur sonucunda" Width="426" Height="89"/>
+                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"  Margin="157,122,205,402" Text="Başta çalıştığınız sayı alanında rakamlar 1'den 90'a kadar karışık dizilmişti, fakat bizim yalnızca 1'den 49'a kadar rakamlara ihtiyacımız vardı. Öyle ise  5 S'in ilk aşaması olan «sınıflandırma» mantığı içerisinde ihtiyacımız olmayan ve «gereksiz» olarak adlandırabileceğimiz 50 – 90 arası sayıları çalışma alanımızdan çıkaralım." Width="792" Height="185"/>
+                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"  Margin="157,337,205,228" Text="Kurallar yine aynı ve süre yine 30 saniye. Amaç 1'den 49'a sol alttan sağ üste doğru sayıları iptal ederek ulaşabileceğiniz en yüksek rakama ulaşmak." Width="792" Height="144"/>
+                    <Button x:Name="btn_next"  Content="Sonraki sayfa" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="395,556,364,76" Width="395" FontSize="55" Click="btn_next_Click"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tab4" Header="TabItem">
+                <Grid>
+                    <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="55"  Margin="374,33,354,587" Content="2. tur sonucunda" Width="426" Height="89"/>
+                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"  Margin="157,122,205,402" Text="çizgi koyulacak" Width="792" Height="185"/>
+                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"  Margin="157,337,205,228" Text="çizgi koyulacak" Width="792" Height="144"/>
+                    <Button x:Name="btn_next2"  Content="Sonraki sayfa" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="395,556,364,76" Width="395" FontSize="55" Click="btn_next_Click"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tab5" Header="TabItem">
+                <Grid>
+                    <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="55"  Margin="374,33,354,587" Content="3. tur sonucunda" Width="426" Height="89"/>
+                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"  Margin="157,122,205,402" Text="düzenlemeye geçilecek" Width="792" Height="185"/>
+                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"  Margin="157,337,205,228" Text="düzenlemeye geçilecek" Width="792" Height="144"/>
+                    <Button x:Name="btn_next3"  Content="Sonraki sayfa" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="395,556,364,76" Width="395" FontSize="55" Click="btn_next_Click"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem" x:Name="tab6">
+                <Grid Margin="0,0,57,35">
+
+
+                    <Border x:Name="number_1n" HorizontalAlignment="center" Height="68" Margin="169,127,845,479" VerticalAlignment="center" Width="83" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_2n" HorizontalAlignment="center" Height="71" Margin="253,124,761,479" VerticalAlignment="center" Width="83" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_3n" HorizontalAlignment="center" Height="68" Margin="336,127,682,479" VerticalAlignment="center" Width="79" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_4n" HorizontalAlignment="center" Height="67" Margin="415,128,598,479" VerticalAlignment="center" Width="84" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_5n" HorizontalAlignment="center" Height="67" Margin="494,128,520,479" VerticalAlignment="center" Width="83" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_6n" HorizontalAlignment="center" Height="67" Margin="577,128,445,479" VerticalAlignment="center" Width="75" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_7n" HorizontalAlignment="center" Height="68" Margin="660,127,355,479" VerticalAlignment="center" Width="82" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_8n" HorizontalAlignment="center" Height="67" Margin="747,128,282,479" VerticalAlignment="center" Width="68" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_9n" HorizontalAlignment="center" Height="67" Margin="820,128,194,479" VerticalAlignment="center" Width="83" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_10n" HorizontalAlignment="center" Height="69" Margin="169,195,845,410" VerticalAlignment="center" Width="83" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_11n" HorizontalAlignment="center" Height="69" Margin="252,195,766,410" VerticalAlignment="center" Width="79" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_12n" HorizontalAlignment="center" Height="69" Margin="336,195,685,410" VerticalAlignment="center" Width="76" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_13n" HorizontalAlignment="center" Height="64" Margin="417,200,608,410" VerticalAlignment="center" Width="72" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_14n" HorizontalAlignment="center" Height="64" Margin="494,200,520,410" VerticalAlignment="center" Width="83" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_15n" HorizontalAlignment="center" Height="64" Margin="582,195,445,415" VerticalAlignment="center" Width="70" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_16n" HorizontalAlignment="center" Height="69" Margin="657,195,360,410" VerticalAlignment="center" Width="80" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_17n" HorizontalAlignment="center" Height="69" Margin="742,195,282,410" VerticalAlignment="center" Width="73" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_18n" HorizontalAlignment="center" Height="69" Margin="820,195,194,410" VerticalAlignment="center" Width="83" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_19n" HorizontalAlignment="center" Height="60" Margin="169,269,845,345" VerticalAlignment="center" Width="83" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_20n" HorizontalAlignment="center" Height="69" Margin="253,264,772,341" VerticalAlignment="center" Width="72" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_21n" HorizontalAlignment="center" Height="68" Margin="336,264,685,342" VerticalAlignment="center" Width="76" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_22n" HorizontalAlignment="center" Height="68" Margin="415,264,603,342" VerticalAlignment="center" Width="79" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_23n" HorizontalAlignment="center" Height="65" Margin="499,264,520,345" VerticalAlignment="center" Width="78" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_24n" HorizontalAlignment="center" Height="65" Margin="582,264,445,345" VerticalAlignment="center" Width="70" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_25n" HorizontalAlignment="center" Height="65" Margin="660,264,360,345" VerticalAlignment="center" Width="77" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_26n" HorizontalAlignment="center" Height="65" Margin="742,264,282,345" VerticalAlignment="center" Width="73" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_27n" HorizontalAlignment="center" Height="65" Margin="824,264,194,345" VerticalAlignment="center" Width="79" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_28n" HorizontalAlignment="center" Height="72" Margin="169,333,849,269" VerticalAlignment="center" Width="79" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_29n" HorizontalAlignment="center" Height="65" Margin="257,333,766,276" VerticalAlignment="center" Width="74" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_30n" HorizontalAlignment="center" Height="73" Margin="331,332,682,269" VerticalAlignment="center" Width="84" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_31n" HorizontalAlignment="center" Height="62" Margin="420,336,608,276" VerticalAlignment="center" Width="69" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_32n" HorizontalAlignment="center" Height="72" Margin="499,333,520,269" VerticalAlignment="center" Width="78" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_33n" HorizontalAlignment="center" Height="66" Margin="582,332,445,276" VerticalAlignment="center" Width="70" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_34n" HorizontalAlignment="center" Height="75" Margin="660,330,360,269" VerticalAlignment="center" Width="77" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_35n" HorizontalAlignment="center" Height="64" Margin="742,334,278,276" VerticalAlignment="center" Width="77" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_36n" HorizontalAlignment="center" Height="68" Margin="820,332,194,274" VerticalAlignment="center" Width="83" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_37n" HorizontalAlignment="center" Height="66" Margin="169,406,845,202" VerticalAlignment="center" Width="83" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_38n" HorizontalAlignment="center" Height="69" Margin="257,403,766,202" VerticalAlignment="center" Width="74" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_39n" HorizontalAlignment="center" Height="69" Margin="336,403,682,202" VerticalAlignment="center" Width="79" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_40n" HorizontalAlignment="center" Height="67" Margin="420,405,608,202" VerticalAlignment="center" Width="69" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_41n" HorizontalAlignment="center" Height="69" Margin="499,403,530,202" VerticalAlignment="center" Width="68" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_42n" HorizontalAlignment="center" Height="69" Margin="582,403,442,202" VerticalAlignment="center" Width="73" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_43n" HorizontalAlignment="center" Height="63" Margin="660,406,360,205" VerticalAlignment="center" Width="77" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_44n" HorizontalAlignment="center" Height="69" Margin="742,403,282,202" VerticalAlignment="center" Width="73" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_45n" HorizontalAlignment="center" Height="69" Margin="824,400,194,205" VerticalAlignment="center" Width="79" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_46n" HorizontalAlignment="center" Height="68" Margin="171,472,845,134" VerticalAlignment="center" Width="81" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_47n" HorizontalAlignment="center" Height="68" Margin="257,472,766,134" VerticalAlignment="center" Width="74" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_48n" HorizontalAlignment="center" Height="68" Margin="331,472,685,134" VerticalAlignment="center" Width="81" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Border x:Name="number_49n" HorizontalAlignment="center" Height="69" Margin="415,471,608,134" VerticalAlignment="center" Width="74" Background="{StaticResource MyColor}"  CornerRadius="22" Visibility="Hidden"/>
+                    <Image  x:Name="imagen" Margin="168,0,194,10"  HorizontalAlignment="center" VerticalAlignment="center">
+                        <Image.Source>
+                            <BitmapImage UriSource="./images/transparent ordered flipped.png" />
+                        </Image.Source>
+                    </Image>
+                    <Border  x:Name="number_1ns"  HorizontalAlignment="center" Height="68" Margin="169,127,845,479" VerticalAlignment="center" Width="83" Background="Transparent" BorderThickness="0">
+                        <Label Content="1" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_2ns"  HorizontalAlignment="center" Height="71" Margin="253,124,761,479" VerticalAlignment="center" Width="83" Background="Transparent" BorderThickness="0" >
+                        <Label Content="2" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_3ns"  HorizontalAlignment="center" Height="68" Margin="336,127,682,479" VerticalAlignment="center" Width="79" Background="Transparent" BorderThickness="0" >
+                        <Label Content="3" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_4ns" HorizontalAlignment="center" Height="67" Margin="420,128,603,479" VerticalAlignment="center" Width="74" Background="Transparent" BorderThickness="0" >
+                        <Label Content="4" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+
+                    <Border x:Name="number_6ns" HorizontalAlignment="center" Height="60" Margin="582,130,442,484" VerticalAlignment="center" Width="73" Background="Transparent" BorderThickness="0" >
+                        <Label Content="6" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_7ns" HorizontalAlignment="center" Height="62" Margin="660,128,360,484" VerticalAlignment="center" Width="77" Background="Transparent" BorderThickness="0" >
+                        <Label Content="7" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_8ns" HorizontalAlignment="center" Height="65" Margin="745,130,277,479" VerticalAlignment="center" Width="75" Background="Transparent" BorderThickness="0" >
+                        <Label Content="8" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_9ns" HorizontalAlignment="center" Height="62" Margin="825,128,194,484" VerticalAlignment="center" Width="78" Background="Transparent" BorderThickness="0" >
+                        <Label Content="9" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_10ns" HorizontalAlignment="center" Height="61" Margin="169,198,845,415" VerticalAlignment="center" Width="83" Background="Transparent" BorderThickness="0" >
+                        <Label Content="10" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_11ns" HorizontalAlignment="center" Height="69" Margin="257,195,766,410" VerticalAlignment="center" Width="74" Background="Transparent" BorderThickness="0" >
+                        <Label Content="11" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_12ns" HorizontalAlignment="center" Height="69" Margin="336,195,685,410" VerticalAlignment="center" Width="76" Background="Transparent" BorderThickness="0" >
+                        <Label Content="12" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_13ns" HorizontalAlignment="center" Height="64" Margin="417,200,603,410" VerticalAlignment="center" Width="77" Background="Transparent" BorderThickness="0" >
+                        <Label Content="13" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+
+                    <Border x:Name="number_15ns" HorizontalAlignment="center" Height="59" Margin="582,200,445,415" VerticalAlignment="center" Width="70" Background="Transparent" BorderThickness="0" >
+                        <Label Content="15" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_16ns" HorizontalAlignment="center" Height="66" Margin="660,198,357,410" VerticalAlignment="center" Width="80" Background="Transparent" BorderThickness="0" >
+                        <Label Content="16" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_17ns" HorizontalAlignment="center" Height="63" Margin="745,198,282,413" VerticalAlignment="center" Width="70" Background="Transparent" BorderThickness="0" >
+                        <Label Content="17" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_18ns" HorizontalAlignment="center" Height="66" Margin="825,195,194,413" VerticalAlignment="center" Width="78" Background="Transparent" BorderThickness="0" >
+                        <Label Content="18" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_19ns" HorizontalAlignment="center" Height="64" Margin="173,268,845,342" VerticalAlignment="center" Width="79" Background="Transparent" BorderThickness="0" >
+                        <Label Content="19" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_20ns" HorizontalAlignment="center" Height="69" Margin="257,264,766,341" VerticalAlignment="center" Width="74" Background="Transparent" BorderThickness="0" >
+                        <Label Content="20" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_21ns" HorizontalAlignment="center" Height="68" Margin="336,261,685,345" VerticalAlignment="center" Width="76" Background="Transparent" BorderThickness="0" >
+                        <Label Content="21" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_22ns" HorizontalAlignment="center" Height="68" Margin="417,264,603,342" VerticalAlignment="center" Width="77" Background="Transparent" BorderThickness="0" >
+                        <Label Content="22" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_23ns" HorizontalAlignment="center" Height="68" Margin="499,264,520,342" VerticalAlignment="center" Width="78" Background="Transparent" BorderThickness="0" >
+                        <Label Content="23" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_24ns" HorizontalAlignment="center" Height="65" Margin="582,267,442,342" VerticalAlignment="center" Width="73" Background="Transparent" BorderThickness="0" >
+                        <Label Content="24" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_25ns" HorizontalAlignment="center" Height="68" Margin="660,264,360,342" VerticalAlignment="center" Width="77" Background="Transparent" BorderThickness="0" >
+                        <Label Content="25" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_26ns" HorizontalAlignment="center" Height="64" Margin="742,267,278,343" VerticalAlignment="center" Width="77" Background="Transparent" BorderThickness="0" >
+                        <Label Content="26" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_27ns" HorizontalAlignment="center" Height="70" Margin="824,261,194,343" VerticalAlignment="center" Width="79" Background="Transparent" BorderThickness="0" >
+                        <Label Content="27" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_28ns" HorizontalAlignment="center" Height="64" Margin="169,337,845,273" VerticalAlignment="center" Width="83" Background="Transparent" BorderThickness="0" >
+                        <Label Content="28" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_29ns" HorizontalAlignment="center" Height="65" Margin="253,336,766,273" VerticalAlignment="center" Width="78" Background="Transparent" BorderThickness="0" >
+                        <Label Content="29" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_30ns" HorizontalAlignment="center" Height="62" Margin="331,336,685,276" VerticalAlignment="center" Width="81" Background="Transparent" BorderThickness="0" >
+                        <Label Content="30" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_31ns" HorizontalAlignment="center" Height="62" Margin="415,336,608,276" VerticalAlignment="center" Width="74" Background="Transparent" BorderThickness="0" >
+                        <Label Content="31" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_32ns" HorizontalAlignment="center" Height="66" Margin="499,337,520,271" VerticalAlignment="center" Width="78" Background="Transparent" BorderThickness="0" >
+                        <Label Content="32" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_14ns" HorizontalAlignment="center" Height="63" Margin="499,198,520,413" VerticalAlignment="center" Width="78" Background="Transparent" BorderThickness="0" >
+                        <Label Content="14" MouseLeftButtonDown="Button_Click" Foreground="Transparent" Margin="-3,-3,-4,-3"/>
+                    </Border>
+                    <Border x:Name="number_33ns" HorizontalAlignment="center" Height="66" Margin="582,334,442,274" VerticalAlignment="center" Width="73" Background="Transparent" BorderThickness="0" >
+                        <Label Content="33" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_34ns" HorizontalAlignment="center" Height="67" Margin="660,334,360,273" VerticalAlignment="center" Width="77" Background="Transparent" BorderThickness="0" >
+                        <Label Content="34" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_35ns" HorizontalAlignment="center" Height="62" Margin="745,336,282,276" VerticalAlignment="center" Width="70" Background="Transparent" BorderThickness="0" >
+                        <Label Content="35" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_36ns" HorizontalAlignment="center" Height="68" Margin="825,336,194,270" VerticalAlignment="center" Width="78" Background="Transparent" BorderThickness="0" >
+                        <Label Content="36" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_37ns" HorizontalAlignment="center" Height="63" Margin="173,406,845,205" VerticalAlignment="center" Width="79" Background="Transparent" BorderThickness="0" >
+                        <Label Content="37" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_38ns" HorizontalAlignment="center" Height="63" Margin="253,406,766,205" VerticalAlignment="center" Width="78" Background="Transparent" BorderThickness="0" >
+                        <Label Content="38" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_39ns" HorizontalAlignment="center" Height="69" Margin="336,403,685,202" VerticalAlignment="center" Width="76" Background="Transparent" BorderThickness="0" >
+                        <Label Content="39" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_40ns" HorizontalAlignment="center" Height="64" Margin="420,405,603,205" VerticalAlignment="center" Width="74" Background="Transparent" BorderThickness="0" >
+                        <Label Content="40" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_41ns" HorizontalAlignment="center" Height="66" Margin="499,403,520,205" VerticalAlignment="center" Width="78" Background="Transparent" BorderThickness="0" >
+                        <Label Content="41" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_5ns" HorizontalAlignment="center" Height="66" Margin="499,127,520,481" VerticalAlignment="center" Width="78" Background="Transparent" BorderThickness="0" >
+                        <Label Content="5" MouseLeftButtonDown="Button_Click"  Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_42ns" HorizontalAlignment="center" Height="66" Margin="582,403,442,205" VerticalAlignment="center" Width="73" Background="Transparent" BorderThickness="0" >
+                        <Label Content="42" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_43ns" HorizontalAlignment="center" Height="63" Margin="660,406,360,205" VerticalAlignment="center" Width="77" Background="Transparent" BorderThickness="0" >
+                        <Label Content="43" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_44ns" HorizontalAlignment="center" Height="69" Margin="742,403,278,202" VerticalAlignment="center" Width="77" Background="Transparent" BorderThickness="0" >
+                        <Label Content="44" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_45ns" HorizontalAlignment="center" Height="65" Margin="824,404,194,205" VerticalAlignment="center" Width="79" Background="Transparent" BorderThickness="0" >
+                        <Label Content="45" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_46ns" HorizontalAlignment="center" Height="67" Margin="173,473,845,134" VerticalAlignment="center" Width="79" Background="Transparent" BorderThickness="0" >
+                        <Label Content="46" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_47ns" HorizontalAlignment="center" Height="66" Margin="257,474,766,134" VerticalAlignment="center" Width="74" Background="Transparent" BorderThickness="0" >
+                        <Label Content="47" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_48ns" HorizontalAlignment="center" Height="67" Margin="336,473,682,134" VerticalAlignment="center" Width="79" Background="Transparent" BorderThickness="0" >
+                        <Label Content="48" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+                    <Border x:Name="number_49ns" HorizontalAlignment="center" Height="67" Margin="417,473,603,134" VerticalAlignment="center" Width="77" Background="Transparent" BorderThickness="0" >
+                        <Label Content="49" MouseLeftButtonDown="Button_Click" Foreground="Transparent"/>
+                    </Border>
+
                 </Grid>
             </TabItem>
         </TabControl>
+        <Label x:Name="score_label" Content="Skor" HorizontalAlignment="Center" Margin="910,33,22,589" VerticalAlignment="Center" FontSize="25" Height="52" Width="165"/>
+        <Label x:Name="score1" Content="0" HorizontalAlignment="Center" Margin="908,104,202,583" VerticalAlignment="Center" FontSize="25" Height="50" Width="50"/>
+        <Label x:Name="score2" Content="0" HorizontalAlignment="Center" Margin="962,104,148,581" VerticalAlignment="Center" FontSize="25" Height="52" Width="50"/>
+        <Label x:Name="score3" Content="0" HorizontalAlignment="Center" Margin="1022,104,88,581" VerticalAlignment="Center" FontSize="25" Height="52" Width="50"/>
+        <Label x:Name="score4" Content="0" HorizontalAlignment="Center" Margin="942,154,168,531" VerticalAlignment="Center" FontSize="25" Height="52" Width="50"/>
+        <Label x:Name="score5" Content="0" HorizontalAlignment="Center" Margin="992,154,118,531" VerticalAlignment="Center" FontSize="25" Height="52" Width="50"/>
+        <Label Content="Sıradaki sayı" HorizontalAlignment="Center" Margin="932,186,0,436" VerticalAlignment="Center" FontSize="25" Height="52" Width="165"/>
+        <Label x:Name="number_next" Content="1" HorizontalAlignment="Center" Margin="921,237,10,386" VerticalAlignment="Center" FontSize="25" Height="51" Width="166"/>
+        <Label Content="Kalan süre" HorizontalAlignment="Center" Margin="932,296,0,326" VerticalAlignment="Center" FontSize="25" Height="52" Width="165"/>
+        <Label x:Name="timer" Content="30" HorizontalAlignment="Center" Margin="910,347,10,276" VerticalAlignment="Center" FontSize="25" Height="51" Width="177"/>
+        <Button x:Name="next_page" Content="Sonraki Sayfa" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="910,406,10,219" Width="177" Height="49" FontSize="25" IsEnabled="False" Click="next_page_Click"/>
+
         <Label Content="Created by: Emre Özincegedik and İsmail Ölmez" Margin="343,674,327,10" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" Height="53" Width="490"/>
     </Grid>
 </Window>

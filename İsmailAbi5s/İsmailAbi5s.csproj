@@ -100,5 +100,8 @@
   <ItemGroup>
     <Resource Include="images\transparent 1-49.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\transparent ordered flipped.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
